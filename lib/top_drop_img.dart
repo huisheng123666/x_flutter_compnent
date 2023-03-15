@@ -25,7 +25,7 @@ class _ImgPullDownBigPage2State extends State<ImgPullDownBigPage2>
     super.initState();
     setState(() {
       _imgNormalHeight = Util.calc(240);
-      _navH = Util.topSafeHeight();
+      _navH = Util.topSafeHeight;
       _imgChangeHeight = _imgNormalHeight;
       _scrollMinOffSet = _imgNormalHeight - _navH;
     });
@@ -96,7 +96,7 @@ class _ImgPullDownBigPage2State extends State<ImgPullDownBigPage2>
         ),
         Positioned(
           top: 0,
-          width: Util.screenWidth(context),
+          width: Util.screenWidth,
           height: _imgChangeHeight,
           child: Container(
             decoration: const BoxDecoration(
@@ -128,14 +128,14 @@ class AppBarWidget extends StatefulWidget {
 class AppBarState extends State<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
-    double appBarHeight = Util.topSafeHeight() + Util.calc(36);
+    double appBarHeight = Util.topSafeHeight + Util.calc(36);
 
     return Opacity(
       opacity: widget.opacity,
       child: Container(
         height: appBarHeight,
-        padding: EdgeInsets.only(top: Util.topSafeHeight()),
-        width: Util.screenWidth(context),
+        padding: EdgeInsets.only(top: Util.topSafeHeight),
+        width: Util.screenWidth,
         color: const Color(0xff00998C),
         child: const Text(
           'x-component',

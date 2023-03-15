@@ -28,9 +28,7 @@ class Util {
     return px / 375 * mediaWidth;
   }
 
-  static screenWidth(BuildContext context) {
-    return MediaQuery.of(context).size.width;
-  }
+  static double screenWidth = MediaQueryData.fromView(window).size.width;
 
   static setStatusBarTextColor(SystemUiOverlayStyle theme, [int delay = 400]) {
     Timer(Duration(milliseconds: delay), () {
@@ -38,15 +36,12 @@ class Util {
     });
   }
 
-  static bottomSafeHeight() {
-    return MediaQueryData.fromView(window).padding.bottom;
-  }
+  static double bottomSafeHeight =
+      MediaQueryData.fromView(window).padding.bottom;
 
-  static topSafeHeight() {
-    return MediaQueryData.fromView(window).padding.top;
-  }
+  static double topSafeHeight = MediaQueryData.fromView(window).padding.top;
 
-  static initDio(BuildContext context) {
+  static initDio() {
     Util.localStorage.ready.then((value) {
       Util.localstorageReady = value;
     });
